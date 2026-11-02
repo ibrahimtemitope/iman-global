@@ -9,15 +9,21 @@ interface Props {
 export const HeroSection: React.FC<Props> = ({ onOpenDesk }) => {
   return (
     <>
-      {/* Clean Full-Width Architectural Hero */}
+      {/* Clean Full-Width Architectural Hero with Rich Dark Transparent Overlay */}
       <section id="top" className="relative overflow-hidden bg-navy-950">
         <img
           src="/assets/uae-daylight-hero.jpg"
           alt="United Arab Emirates financial district architecture"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
-        {/* Calm Corporate Royal-Navy Readability Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/92 via-navy-950/80 to-navy-950/45" />
+        {/* Full Dark Transparent Readability Overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(90deg, rgba(4, 14, 33, 0.88) 0%, rgba(4, 14, 33, 0.78) 55%, rgba(4, 14, 33, 0.58) 100%)',
+          }}
+        />
 
         <div className="relative mx-auto max-w-[1280px] px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-36">
           <div className="max-w-3xl">
@@ -28,14 +34,14 @@ export const HeroSection: React.FC<Props> = ({ onOpenDesk }) => {
               </span>
             </div>
 
-            <h1 className="mt-5 text-[2.15rem] font-light leading-[1.18] tracking-tight text-white sm:text-[3.1rem] lg:text-[3.55rem]">
+            <h1 className="mt-5 text-[2.15rem] font-light leading-[1.18] tracking-tight text-white drop-shadow-sm sm:text-[3.1rem] lg:text-[3.55rem]">
               Deploying Institutional Capital Across{' '}
               <strong className="font-bold text-white">
                 Emerging Markets &amp; Infrastructure.
               </strong>
             </h1>
 
-            <p className="mt-6 max-w-2xl text-[16px] leading-[1.8] text-slate-200 sm:text-[17.5px]">
+            <p className="mt-6 max-w-2xl text-[16px] leading-[1.8] text-white/90 sm:text-[17.5px]">
               Headquartered in the United Arab Emirates, Iman Global is a private investment
               holding entity focused on real-asset infrastructure, renewable energy deployment,
               and scalable digital enterprises across South Asia, the GCC, and high-growth
@@ -45,7 +51,7 @@ export const HeroSection: React.FC<Props> = ({ onOpenDesk }) => {
             <div className="mt-9 flex flex-wrap items-center gap-3.5">
               <a
                 href="#verticals"
-                className="inline-flex items-center gap-2 rounded-md bg-white px-6 py-3.5 text-[12.5px] font-bold tracking-[0.08em] text-navy-900 uppercase transition-colors hover:bg-gold-50"
+                className="inline-flex items-center gap-2 rounded-md bg-white px-6 py-3.5 text-[12.5px] font-bold tracking-[0.08em] text-navy-900 uppercase shadow-sm transition-colors hover:bg-gold-50"
               >
                 <span>Business Verticals</span>
                 <ArrowRight className="h-4 w-4" />
@@ -54,7 +60,7 @@ export const HeroSection: React.FC<Props> = ({ onOpenDesk }) => {
               <button
                 type="button"
                 onClick={onOpenDesk}
-                className="inline-flex items-center gap-2 rounded-md border border-white/40 bg-white/5 px-6 py-3.5 text-[12.5px] font-semibold tracking-[0.08em] text-white uppercase backdrop-blur-sm transition-colors hover:border-white hover:bg-white/15"
+                className="inline-flex items-center gap-2 rounded-md border border-white/55 bg-navy-950/35 px-6 py-3.5 text-[12.5px] font-semibold tracking-[0.08em] text-white uppercase backdrop-blur-sm transition-colors hover:border-white hover:bg-white/15"
               >
                 <span>Corporate Desk</span>
               </button>
@@ -138,7 +144,7 @@ export const HeroSection: React.FC<Props> = ({ onOpenDesk }) => {
                       alt={v.title}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/65 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/20 to-transparent" />
                     <span className="absolute bottom-3.5 left-4 text-[11px] font-semibold tracking-[0.12em] text-gold-200 uppercase">
                       {v.subtitle}
                     </span>

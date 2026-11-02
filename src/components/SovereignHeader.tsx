@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const SovereignCrest: React.FC<{ className?: string; inverted?: boolean }> = ({
-  className = 'h-9 w-9',
+  className = 'h-8 w-8',
   inverted = false,
 }) => {
   const boxId = useId();
@@ -44,59 +44,51 @@ export const SovereignHeader: React.FC<Props> = ({ onOpenDesk }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navItems = [
-    { href: '#overview', label: 'Who We Are' },
-    { href: '#verticals', label: 'Business Verticals' },
-    { href: '#infrastructure', label: 'Clean Energy' },
-    { href: '#platforms', label: 'Digital Platforms' },
+    { href: '#overview', label: 'About' },
+    { href: '#verticals', label: 'Verticals' },
     { href: '#governance', label: 'Governance' },
     { href: '#footprint', label: 'Footprint' },
   ];
 
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200/90 bg-white/95 backdrop-blur-md">
-      <div className="mx-auto flex h-[56px] max-w-[1280px] items-center justify-between gap-3 px-4 sm:h-[76px] sm:px-6 lg:px-8">
-        {/* Brand Identity */}
-        <a href="#top" className="flex min-w-0 items-center gap-2.5 sm:gap-3.5">
-          <SovereignCrest className="h-8 w-8 shrink-0 sm:h-10 sm:w-10" />
-          <div className="min-w-0 leading-tight">
-            <span className="block truncate text-[15px] font-bold tracking-[0.12em] text-navy-900 uppercase sm:text-[18px] sm:tracking-[0.15em]">
-              Iman Global
-            </span>
-            <span className="block text-[9.5px] font-medium tracking-[0.14em] text-slate-500 uppercase sm:text-[10.5px]">
-              United Arab Emirates
-            </span>
-          </div>
+      <div className="mx-auto flex h-[54px] max-w-[1280px] items-center justify-between gap-3 px-4 sm:h-[68px] sm:px-6 lg:px-8">
+        {/* Compact Brand Identity */}
+        <a href="#top" className="flex min-w-0 items-center gap-2.5">
+          <SovereignCrest className="h-7 w-7 shrink-0 sm:h-9 sm:w-9" />
+          <span className="truncate text-[14px] font-bold tracking-[0.1em] text-navy-900 uppercase sm:text-[16px] sm:tracking-[0.12em]">
+            Iman Global
+          </span>
         </a>
 
-        {/* Clean Desktop Navigation */}
-        <nav className="hidden items-center gap-7 lg:flex">
+        {/* Short, Clean Desktop Navigation */}
+        <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="nav-link-corporate text-[12.5px] font-semibold tracking-[0.08em] text-slate-700 uppercase transition-colors hover:text-navy-900"
+              className="nav-link-corporate text-[12px] font-semibold tracking-[0.06em] text-slate-700 uppercase transition-colors hover:text-navy-900"
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-        {/* Actions */}
+        {/* Compact Action */}
         <div className="flex shrink-0 items-center gap-2">
           <button
             type="button"
             onClick={onOpenDesk}
-            className="inline-flex items-center justify-center rounded-md bg-navy-900 px-3.5 py-2 text-[11px] font-semibold tracking-[0.08em] text-white uppercase transition-colors hover:bg-navy-800 sm:px-5 sm:py-2.5 sm:text-[12px]"
+            className="inline-flex items-center justify-center rounded-md bg-navy-900 px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.06em] text-white uppercase transition-colors hover:bg-navy-800 sm:px-4 sm:py-2 sm:text-[12px]"
           >
-            <span className="sm:hidden">Contact</span>
-            <span className="hidden sm:inline">Corporate Desk</span>
+            Contact
           </button>
 
           <button
             type="button"
             onClick={() => setMobileOpen((p) => !p)}
             aria-label="Toggle navigation menu"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-slate-200 text-navy-900 hover:bg-slate-50 lg:hidden"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-navy-900 hover:bg-slate-50 md:hidden"
           >
             {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
@@ -105,14 +97,14 @@ export const SovereignHeader: React.FC<Props> = ({ onOpenDesk }) => {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="border-t border-slate-200 bg-white px-4 py-3 shadow-lg lg:hidden">
+        <div className="border-t border-slate-200 bg-white px-4 py-2.5 shadow-lg md:hidden">
           <nav className="flex flex-col divide-y divide-slate-100">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
-                className="py-2.5 text-[13px] font-semibold tracking-[0.06em] text-slate-700 uppercase hover:text-navy-900"
+                className="py-2.5 text-[12.5px] font-semibold tracking-[0.06em] text-slate-700 uppercase hover:text-navy-900"
               >
                 {item.label}
               </a>
