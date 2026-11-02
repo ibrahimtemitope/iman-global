@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #ffffff;
+    color: #334155;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    line-height: 1.7;
+  }
+}
+
+/* Clean corporate underline hover inspired by Gulf conglomerate navigation */
+.nav-link-corporate {
+  position: relative;
+}
+
+.nav-link-corporate::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: #002366;
+  transition: width 0.25s ease;
+}
+
+.nav-link-corporate:hover::after {
+  width: 100%;
+}
